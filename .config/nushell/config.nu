@@ -17,11 +17,11 @@ alias cdi = zi
 alias mc = mc --nosubshell --nocolor
 
 def "cfg nu" [] {
-  cd ~/.config/nushell
+  cd ~/dotfiles/.config/nushell
   nvim config.nu
 }
 def "cfg env" [] {
-  cd ~/.config/nushell
+  cd ~/dotfiles/.config/nushell
   nvim env.nu
 }
 def "cfg zsh" [] {
@@ -29,11 +29,11 @@ def "cfg zsh" [] {
   nvim .zshrc
 }
 def "cfg nvim" [] {
-  cd ~/.config/nvim
+  cd ~/dotfiles/.config/nvim
   nvim .
 }
 def "cfg aerospace" [] {
-  cd ~/.config/aerospace
+  cd ~/dotfiles/.config/aerospace
   nvim aerospace.toml
 }
 
