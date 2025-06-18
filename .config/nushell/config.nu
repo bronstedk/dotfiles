@@ -18,23 +18,23 @@ alias mc = mc --nosubshell --nocolor
 
 def "cfg nu" [] {
   cd ~/dotfiles/.config/nushell
-  nvim config.nu
+  code config.nu
 }
 def "cfg env" [] {
   cd ~/dotfiles/.config/nushell
-  nvim env.nu
+  code env.nu
 }
 def "cfg zsh" [] {
-  cd
-  nvim .zshrc
+  cd ~/dotfiles
+  code .zshrc
 }
 def "cfg nvim" [] {
   cd ~/dotfiles/.config/nvim
-  nvim .
+  code .
 }
 def "cfg aerospace" [] {
   cd ~/dotfiles/.config/aerospace
-  nvim aerospace.toml
+  code aerospace.toml
 }
 
 # Generates a specified number of daily progress note files by copying a template
@@ -162,6 +162,16 @@ def "custom groupFiles" [maxSize: filesize = 5mb, --move (-m)] {
 
 def "scrcpy custom" [] {
   scrcpy --no-mouse-hover --power-off-on-close --stay-awake --window-borderless
+}
+
+def "touch -custom" [...files: string] {
+  for $file in $files {
+    let spilt = $file | split row "/" | last
+    let folder = $file | split row "/" | drop | str join "/"
+
+    mkdir $folder
+    touch $file
+  }
 }
 
 fastfetch
