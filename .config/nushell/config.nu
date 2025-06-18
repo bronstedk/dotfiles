@@ -1,15 +1,8 @@
-$env.config = {
-  show_banner: false
-}
-$env.EDITOR = "nvim"
-$env.config.buffer_editor = "nvim"
-$env.config.highlight_resolved_externals = true
-$env.config.edit_mode = "vi"
-
-source ~/.local/share/atuin/init.nu
-source ~/.zoxide.nu
-source ~/.cache/carapace/init.nu
 source ~/.config/nushell/catppuccin_mocha.nu
+source ~/.cache/carapace/init.nu
+source ~/.zoxide.nu
+source ~/.local/share/atuin/init.nu
+
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
