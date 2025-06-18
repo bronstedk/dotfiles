@@ -20,6 +20,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
 
 alias ls='eza -lha -s name --icons=always'
 alias cd='z'

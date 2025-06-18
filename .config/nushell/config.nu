@@ -1,8 +1,10 @@
 $env.config = {
   show_banner: false
 }
+$env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
 $env.config.highlight_resolved_externals = true
+$env.config.edit_mode = "vi"
 
 source ~/.local/share/atuin/init.nu
 source ~/.zoxide.nu
@@ -18,23 +20,23 @@ alias mc = mc --nosubshell --nocolor
 
 def "cfg nu" [] {
   cd ~/dotfiles/.config/nushell
-  code config.nu
+  nvim config.nu
 }
 def "cfg env" [] {
   cd ~/dotfiles/.config/nushell
-  code env.nu
+  nvim env.nu
 }
 def "cfg zsh" [] {
   cd ~/dotfiles
-  code .zshrc
+  nvim .zshrc
 }
 def "cfg nvim" [] {
   cd ~/dotfiles/.config/nvim
-  code .
+  nvim .
 }
 def "cfg aerospace" [] {
   cd ~/dotfiles/.config/aerospace
-  code aerospace.toml
+  nvim aerospace.toml
 }
 
 # Generates a specified number of daily progress note files by copying a template
