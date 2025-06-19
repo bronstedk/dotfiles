@@ -76,7 +76,6 @@ $env.XDG_CONFIG_HOME = $env.HOME + "/.config"
 $env.config.show_banner = false
 
 $env.EDITOR = "nvim"
-$env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
 
 $env.config.highlight_resolved_externals = true

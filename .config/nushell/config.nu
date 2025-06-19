@@ -11,24 +11,20 @@ alias cd = z
 alias cdi = zi
 alias mc = mc --nosubshell --nocolor
 
-def "cfg nu" [] {
-  cd ~/dotfiles/.config/nushell
-  nvim config.nu
-}
-def "cfg env" [] {
-  cd ~/dotfiles/.config/nushell
-  nvim env.nu
-}
-def "cfg zsh" [] {
-  cd ~/dotfiles
-  nvim .zshrc
-}
-def "cfg nvim" [] {
-  cd ~/dotfiles/.config/nvim
+def "config dotfiles" [] {
+  cd "~/dotfiles"
   nvim .
 }
-def "cfg aerospace" [] {
-  cd ~/dotfiles/.config/aerospace
+def "config zsh" [] {
+  cd "~/dotfiles"
+  nvim .zshrc
+}
+def "config nvim" [] {
+  cd "~/dotfiles/.config/nvim"
+  nvim .
+}
+def "config aerospace" [] {
+  cd "~/dotfiles/.config/aerospace"
   nvim aerospace.toml
 }
 
