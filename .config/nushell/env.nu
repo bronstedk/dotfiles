@@ -18,11 +18,6 @@
 # them for future reference.
 
 let prePath = [
-  "/Users/bronstedk/.config/carapace/bin"
-  "/Users/bronstedk/go/bin"
-  "/opt/homebrew/opt/postgresql@15/bin"
-  "/opt/homebrew/opt/openjdk/bin"
-  "/Library/Frameworks/Python.framework/Versions/3.13/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "/usr/local/bin"
@@ -37,6 +32,11 @@ let prePath = [
   "/Library/Apple/usr/bin"
   "/usr/local/MacGPG2/bin"
   "/Library/TeX/texbin"
+  "/Users/bronstedk/.config/carapace/bin"
+  "/Users/bronstedk/go/bin"
+  "/opt/homebrew/opt/postgresql@15/bin"
+  "/opt/homebrew/opt/openjdk/bin"
+  "/Library/Frameworks/Python.framework/Versions/3.13/bin"
   "/Users/bronstedk/Library/Application Support/carapace/bin"
   "/Users/bronstedk/.sdkman/candidates/kotlin/current/bin"
   "/Users/bronstedk/.sdkman/candidates/java/current/bin"
@@ -49,7 +49,7 @@ let prePath = [
   "/Users/bronstedk/Library/Application Support/JetBrains/Toolbox/scripts"
   ($env.HOME + "/.atuin/bin/env")
 ]
-$env.PATH = $env.PATH ++ $prePath
+$env.PATH = $prePath ++ $env.PATH
 
 $env.HOMEBREW_REPOSITORY = "/opt/homebrew"
 $env.INFOPATH = "/opt/homebrew/share/info:/opt/homebrew/share/info"

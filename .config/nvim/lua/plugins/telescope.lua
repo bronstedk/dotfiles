@@ -13,6 +13,42 @@ return {
         config = function()
             local telescope = require("telescope")
             telescope.setup({
+                defaults = {
+                    vimgrep_arguments = {
+                        "rg",
+                        "--no-heading",
+                        "--follow",
+                        "--with-filename",
+                        "--line-number",
+                        "--smart-case",
+                        "--column",
+                        "--hidden",
+                        "--glob=!**/.git/*",
+                        "--glob=!**/.idea/*",
+                        "--glob=!**/.vscode/*",
+                        "--glob=!**/build/*",
+                        "--glob=!**/dist/*",
+                        "--glob=!**/yarn.lock",
+                        "--glob=!**/package-lock.json",
+                    },
+                },
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                        find_command = {
+                            "rg",
+                            "--files",
+                            "--hidden",
+                            "--glob=!**/.git/*",
+                            "--glob=!**/.idea/*",
+                            "--glob=!**/.vscode/*",
+                            "--glob=!**/build/*",
+                            "--glob=!**/dist/*",
+                            "--glob=!**/yarn.lock",
+                            "--glob=!**/package-lock.json",
+                        },
+                    },
+                },
                 extensions = {
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown({}),

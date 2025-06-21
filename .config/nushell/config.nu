@@ -10,23 +10,8 @@ alias ls = ls -a
 alias cd = z
 alias cdi = zi
 alias mc = mc --nosubshell --nocolor
+alias vi = nvim
 
-def "config dotfiles" [] {
-  cd "~/dotfiles"
-  nvim .
-}
-def "config zsh" [] {
-  cd "~/dotfiles"
-  nvim .zshrc
-}
-def "config nvim" [] {
-  cd "~/dotfiles/.config/nvim"
-  nvim .
-}
-def "config aerospace" [] {
-  cd "~/dotfiles/.config/aerospace"
-  nvim aerospace.toml
-}
 
 # Generates a specified number of daily progress note files by copying a template
 # and appending incremented dates to the filenames. Updates the last used date in 'last_date.json'.
@@ -155,7 +140,7 @@ def "scrcpy custom" [] {
   scrcpy --no-mouse-hover --power-off-on-close --stay-awake --window-borderless
 }
 
-def "touch -custom" [...files: string] {
+def "touch -c" [...files: string] {
   for $file in $files {
     let spilt = $file | split row "/" | last
     let folder = $file | split row "/" | drop | str join "/"
