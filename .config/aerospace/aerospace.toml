@@ -159,9 +159,9 @@ alt-ctrl-f = ["layout floating tiling"]
 [mode.service.binding]
 esc = [
     "reload-config",
-    "mode main",
-    'exec-and-forget sketchybar --reload',
-    'exec-and-forget borders active_color=0xFFE7C664 width=10.0',
+    'exec-and-forget killall sketchybar && sketchybar',
+    'exec-and-forget killall borders && borders active_color=0xFFE7C664 width=10.0',
+    'mode main',
 ]
 r = [
     "flatten-workspace-tree",
