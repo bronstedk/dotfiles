@@ -9,7 +9,6 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget sketchybar',
     'exec-and-forget borders active_color=0xFFE7C664 width=10.0',
 ]
 # Start AeroSpace at login
@@ -34,15 +33,10 @@ default-root-container-orientation = "auto"
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = [
     "move-mouse monitor-lazy-center",
-    'exec-and-forget sketchybar --trigger workspaces_screen',
 ]
 on-focus-changed = [
-    'exec-and-forget sketchybar --trigger aerospace_focus_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 exec-on-workspace-change = [
-    '/bin/bash',
-    '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE FOCUSED_DISPLAY=$(aerospace list-monitors --focused | awk "{print $1}"); sketchybar --trigger workspaces_screen',
 ]
 # on-focus-changed = "move-mouse window-lazy-center"
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -68,7 +62,7 @@ inner.horizontal = 5
 inner.vertical = 5
 outer.left = 5
 outer.bottom = 5
-outer.top = [{ monitor."Built-in Retina Display" = 5 }, 41]
+outer.top = [{ monitor."Built-in Retina Display" = 5 }, 5]
 outer.right = 5
 
 # 'main' binding mode declaration
@@ -120,27 +114,20 @@ alt-minus = "resize smart -50"
 alt-equal = "resize smart +50"
 alt-shift-equal = "balance-sizes"
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = "workspace 1"
-alt-2 = "workspace 2"
-alt-3 = "workspace 3"
-alt-4 = "workspace 4"
-alt-5 = "workspace 5"
-alt-6 = "workspace 6"
-alt-7 = "workspace 7"
-alt-8 = "workspace 8"
-alt-9 = "workspace 9"
-alt-0 = "workspace 10"
+alt-b = "workspace b"
+alt-t = "workspace t"
+alt-c = "workspace c"
+alt-o = "workspace o"
+alt-f = "workspace f"
+alt-m = "workspace m"
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = ["move-node-to-workspace 1"]
-alt-shift-2 = ["move-node-to-workspace 2"]
-alt-shift-3 = ["move-node-to-workspace 3"]
-alt-shift-4 = ["move-node-to-workspace 4"]
-alt-shift-5 = ["move-node-to-workspace 5"]
-alt-shift-6 = ["move-node-to-workspace 6"]
-alt-shift-7 = ["move-node-to-workspace 7"]
-alt-shift-8 = ["move-node-to-workspace 8"]
-alt-shift-9 = ["move-node-to-workspace 9"]
-alt-shift-0 = ["move-node-to-workspace 10"]
+alt-shift-b = ["move-node-to-workspace b"]
+alt-shift-t = ["move-node-to-workspace t"]
+alt-shift-c = ["move-node-to-workspace c"]
+alt-shift-o = ["move-node-to-workspace o"]
+alt-shift-f = ["move-node-to-workspace f"]
+alt-shift-m = ["move-node-to-workspace m"]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = "workspace-back-and-forth"
@@ -149,80 +136,79 @@ alt-shift-tab = "move-workspace-to-monitor --wrap-around next"
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = [
     'mode service',
-    'exec-and-forget sketchybar --trigger aerospace_enter_service_mode',
 ]
-alt-f = ['fullscreen']
-alt-ctrl-f = ["layout floating tiling"]
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = [
     "reload-config",
-    'exec-and-forget killall sketchybar && sketchybar',
     'exec-and-forget killall borders && borders active_color=0xFFE7C664 width=10.0',
     'mode main',
 ]
 r = [
     "flatten-workspace-tree",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ] # reset layout
 f = [
     "layout floating tiling",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ] # Toggle between floating and tiling layout
 backspace = [
     "close-all-windows-but-current",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 # s = ['layout sticky tiling', 'mode main']
 alt-shift-h = [
     "join-with left",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 alt-shift-j = [
     "join-with down",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 alt-shift-k = [
     "join-with up",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 alt-shift-l = [
     "join-with right",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 down = "volume down"
 up = "volume up"
 shift-down = [
     "volume set 0",
     "mode main",
-    'exec-and-forget sketchybar --trigger aerospace_leave_service_mode',
 ]
 
 [workspace-to-monitor-force-assignment]
-1 = ["KA242Y E", "secondary"]
+b = ["KA242Y E", "secondary"]
 
 [[on-window-detected]]
-if.app-id = "com.apple.systempreferences"
-run = ['layout tiling']
+if.app-id = "com.vivaldi.Vivaldi"
+run = ['move-node-to-workspace b']
 
 [[on-window-detected]]
-if.app-id = "com.apple.printcenter"
-run = ['layout tiling']
+if.app-id = "com.google.Chrome"
+run = ['move-node-to-workspace b']
 
 [[on-window-detected]]
-if.app-id = "com.logi.optionsplus"
-run = ['layout tiling']
+if.app-id = "com.microsoft.VSCode"
+run = ['move-node-to-workspace c']
 
 [[on-window-detected]]
-if.app-id = "net.freemacsoft.AppCleaner-SmartDelete"
-run = ['layout tiling']
+if.app-id = "com.apple.finder"
+run = ['move-node-to-workspace f']
+
+[[on-window-detected]]
+if.app-id = "com.github.wez.wezterm"
+run = ['move-node-to-workspace t']
+
+[[on-window-detected]]
+if.app-id = "com.apple.Music"
+run = ['move-node-to-workspace m']
+
+[[on-window-detected]]
+run = ["move-node-to-workspace o"]

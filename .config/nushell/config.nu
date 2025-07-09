@@ -11,6 +11,11 @@ alias cd = z
 alias cdi = zi
 alias mc = mc --nosubshell --nocolor
 alias vi = nvim
+alias vim = nvim
+alias envpip3 = .venv/bin/pip3
+alias envpip = envpip3
+alias envpython = .venv/bin/python3
+alias envpython3 = envpython
 
 
 # Generates a specified number of daily progress note files by copying a template
