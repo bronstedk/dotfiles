@@ -50,6 +50,16 @@ return {
             })
             lspconfig.pyright.setup({
                 capabilities = capabilities,
+                settings = {
+                    python = {
+                        pythonPath = "/Users/bronstedk/DevTools/sdks/python/myenv/bin/python",
+                        venvPath = "/Users/bronstedk/DevTools/sdks/python/myenv/",
+                        analysis = {
+                            diagnosticMode = "workspace",
+                            typeCheckingMode = "strict",
+                        },
+                    },
+                },
             })
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,

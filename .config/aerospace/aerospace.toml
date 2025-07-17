@@ -143,6 +143,7 @@ alt-shift-semicolon = ['mode service']
 [mode.service.binding]
 esc = [
     "reload-config",
+    "exec-and-forget killall sketchybar && sketchybar",
     'exec-and-forget killall borders && borders active_color=0xFFE7C664 width=10.0',
     'mode main',
 ]
@@ -175,6 +176,10 @@ run = ['move-node-to-workspace C']
 
 [[on-window-detected]]
 if.app-id = "com.unity3d.unityhub"
+run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = "com.unity3d.UnityEditor5.x"
 run = ['move-node-to-workspace C']
 
 [[on-window-detected]]

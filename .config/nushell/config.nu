@@ -12,11 +12,8 @@ alias cdi = zi
 alias mc = mc --nosubshell --nocolor
 alias vi = nvim
 alias vim = nvim
-alias envpip3 = .venv/bin/pip3
-alias envpip = envpip3
-alias envpython = .venv/bin/python3
-alias envpython3 = envpython
-
+alias envpip = /Users/bronstedk/DevTools/sdks/python/myenv/bin/python -m pip
+alias envpython = /Users/bronstedk/DevTools/sdks/python/myenv/bin/python
 
 # Generates a specified number of daily progress note files by copying a template
 # and appending incremented dates to the filenames. Updates the last used date in 'last_date.json'.
@@ -31,7 +28,7 @@ def "custom genDocFiles" [ --num_files (-n): int, --last_date (-l): string = ""]
   if ($num_files == null or $num_files <= 0) {
     error make {msg: "Please provide a positive integer for --num_files."}
   }
-  cd /Volumes/BK_PSSD_T7/Documents/shema/
+  cd /Users/bronstedk/Documents/shema
 
   let dir = "./templates/"
   let target_dir = "./daily_notes/"
@@ -72,75 +69,6 @@ def "custom genDocFiles" [ --num_files (-n): int, --last_date (-l): string = ""]
   "done"
 }
 
-def "custom groupFiles" [maxSize: filesize = 5mb, --move (-m)] {
-  let files: table<name: string, size: filesize> = ls -a
-  | where type == file
-  | where name != ".DS_Store"
-  | sort-by size
-  | reverse
-  | select name size
-
-  mut chunks: list<list<string>> = []
-  mut currentChunk: list<string> = []
-  mut currentSize = 0mb
-  mut oversized: list<string> = []
-
-  for file in $files {
-    if $file.size > $maxSize {
-      $oversized = $oversized ++ [$file.name]
-      continue
-    }
-
-    if ($currentSize + $file.size) <= $maxSize {
-      $currentChunk = $currentChunk ++ [$file.name]
-      $currentSize = $currentSize + $file.size
-    } else {
-      if ($currentChunk | length) != 0 {
-        $chunks = $chunks ++ [$currentChunk]
-      }
-      $currentChunk = [$file.name]
-      $currentSize = $file.size
-    }
-  }
-
-  if ($currentChunk | length) != 0 {
-    $chunks = $chunks ++ [$currentChunk]
-  }
-
-  mut folderIndex = 1
-  for chunk in $chunks {
-    let folderName = $"chunk_($folderIndex)"
-
-    if not ($folderName | path exists) {
-      mkdir $folderName
-    }
-
-    for fname in $chunk {
-      if $move {
-        mv $fname $"./($folderName)/($fname)"
-      } else {
-        cp $fname $"./($folderName)/($fname)"
-      }
-    }
-
-    $folderIndex = $folderIndex + 1
-  }
-
-  if ($oversized | length) != 0 {
-    let oversizedDir = "oversized"
-    mkdir $oversizedDir
-    for bigFile in $oversized {
-      if $move {
-        mv $bigFile $"./($oversizedDir)/($bigFile)"
-      } else {
-        cp $bigFile $"./($oversizedDir)/($bigFile)"
-      }
-    }
-  }
-
-  "done"
-}
-
 def "scrcpy custom" [] {
   scrcpy --no-mouse-hover --power-off-on-close --stay-awake --window-borderless
 }
@@ -150,7 +78,9 @@ def "touch -c" [...files: string] {
     let spilt = $file | split row "/" | last
     let folder = $file | split row "/" | drop | str join "/"
 
-    mkdir $folder
+    if not ($folder | path exists) {
+      mkdir $folder
+    }
     touch $file
   }
 }

@@ -18,6 +18,10 @@ alias ls='eza -lha -s name --icons=always'
 alias cd='z'
 alias cdi='zi'
 alias mc='mc --nosubshell --nocolor'
+alias vi='nvim'
+alias vim='nvim'
+alias envpip='.venv/bin/pip'
+alias envpython='.venv/bin/python'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
