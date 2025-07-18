@@ -35,7 +35,7 @@ return {
                     hover.dictionary,
 
                     -- python
-                    diagnostics.mypy,
+                    --diagnostics.mypy,
                     formatting.isort,
                     formatting.pyink,
 

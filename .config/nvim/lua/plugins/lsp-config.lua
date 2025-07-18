@@ -56,7 +56,7 @@ return {
                         venvPath = "/Users/bronstedk/DevTools/sdks/python/myenv/",
                         analysis = {
                             diagnosticMode = "workspace",
-                            typeCheckingMode = "strict",
+                            typeCheckingMode = "standard",
                         },
                     },
                 },
