@@ -54,4 +54,11 @@ return {
             vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format current buffer" })
         end,
     },
+    {
+        "lervag/vimtex",
+        lazy = false,
+        init = function()
+            vim.g.vimtex_view_method = "TexShop"
+        end,
+    },
 }
