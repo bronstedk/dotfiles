@@ -12,8 +12,8 @@ alias cdi = zi
 alias mc = mc --nosubshell --nocolor
 alias vi = nvim
 alias vim = nvim
-alias envpip = .venv/bin/python -m pip
-alias envpython = .venv/bin/python
+alias envpip = /Users/bronstedk/DevTools/sdks/python/myenv/bin/python -m pip
+alias envpython = /Users/bronstedk/DevTools/sdks/python/myenv/bin/python
 
 # Generates a specified number of daily progress note files by copying a template
 # and appending incremented dates to the filenames. Updates the last used date in 'last_date.json'.

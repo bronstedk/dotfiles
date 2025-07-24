@@ -33,7 +33,8 @@ default-root-container-orientation = "auto"
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
-on-focus-changed = []
+on-focus-changed = [
+]
 exec-on-workspace-change = [
     '/bin/bash',
     '-c',
@@ -115,12 +116,20 @@ alt-minus = "resize smart -50"
 alt-equal = "resize smart +50"
 alt-shift-equal = "balance-sizes"
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = "workspace 1"
-alt-2 = "workspace 2"
+alt-b = "workspace B"
+alt-t = "workspace T"
+alt-c = "workspace C"
+alt-o = "workspace O"
+alt-f = "workspace F"
+alt-m = "workspace M"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = ["move-node-to-workspace 1 --focus-follows-window"]
-alt-shift-2 = ["move-node-to-workspace 2 --focus-follows-window"]
+alt-shift-b = ["move-node-to-workspace B --focus-follows-window"]
+alt-shift-t = ["move-node-to-workspace T --focus-follows-window"]
+alt-shift-c = ["move-node-to-workspace C --focus-follows-window"]
+alt-shift-o = ["move-node-to-workspace O --focus-follows-window"]
+alt-shift-f = ["move-node-to-workspace F --focus-follows-window"]
+alt-shift-m = ["move-node-to-workspace M --focus-follows-window"]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = "workspace-back-and-forth"
@@ -155,7 +164,38 @@ up = "volume up"
 shift-down = ["volume set 0", "mode main"]
 
 [workspace-to-monitor-force-assignment]
-1 = ["KA242Y E", "secondary"]
+B = ["KA242Y E", "secondary"]
+
+[[on-window-detected]]
+if.app-id = "com.vivaldi.Vivaldi"
+run = ['move-node-to-workspace B']
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.VSCode"
+run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = "com.unity3d.unityhub"
+run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = "com.unity3d.UnityEditor5.x"
+run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = ['move-node-to-workspace F']
+
+[[on-window-detected]]
+if.app-id = "com.github.wez.wezterm"
+run = ['move-node-to-workspace T']
+
+[[on-window-detected]]
+if.app-id = "com.apple.Music"
+run = ['move-node-to-workspace M']
+
+[[on-window-detected]]
+run = ["move-node-to-workspace O"]
 
 [[on-window-detected]]
 if.app-id = "com.apple.systempreferences"
