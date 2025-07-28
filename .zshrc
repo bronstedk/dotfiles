@@ -16,13 +16,17 @@ eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
 alias ls='eza -lha -s name --icons=always'
+
 alias cd='z'
 alias cdi='zi'
-alias mc='mc --nosubshell --nocolor'
+
+alias y='yazi'
+
 alias vi='nvim'
 alias vim='nvim'
-alias envpip='.venv/bin/python -m pip'
-alias envpython='.venv/bin/python'
+
+alias epip='.venv/bin/python -m pip'
+alias epython='.venv/bin/python'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -46,4 +50,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# nu
+nu
+# fastfetch
