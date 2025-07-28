@@ -73,6 +73,10 @@ return {
             lspconfig.nushell.setup({
                 capabilities = capabilities,
             })
+            lspconfig.zls.setup({
+                capabilities = capabilities,
+                cmd = { "/opt/homebrew/bin/zls" },
+            })
             -- lspconfig.dartls.setup({
             --   capabilities = capabilities,
             --})
