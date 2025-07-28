@@ -1,5 +1,5 @@
-local settings = require("settings")
-local colors = require("colors")
+local settings = require("sbar_setup.settings")
+local colors = require("sbar_setup.colors")
 
 sbar.default({
     updates = "when_shown",

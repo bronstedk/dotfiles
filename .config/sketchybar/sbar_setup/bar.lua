@@ -1,4 +1,4 @@
-local colors = require("colors")
+local colors = require("sbar_setup.colors")
 
 sbar.bar({
     height = 40,
