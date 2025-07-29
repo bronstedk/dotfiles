@@ -58,13 +58,7 @@ function ToStringUtil(value)
     end
 end
 
-local written = false
 function WriteUtil(value, filename)
-    if written then
-        return false, nil
-    end
-    written = true
-
     value = ToStringUtil(value)
 
     local tmpFilename = filename .. ".tmp"
