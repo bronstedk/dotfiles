@@ -29,10 +29,24 @@ return {
           }
         end
       end,
+      formatters = {
+        bibtex_tidy = {},
+        ktlint = {},
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
+        python = { 'isort', 'pyink' },
+        go = { 'gofumpt', 'goimports', 'golangci-lint' },
+        tex = { 'tex-fmt' },
+        bib = { 'bibtex-tidy' },
+        java = { 'google-java-format' },
+        kotlin = { 'ktlint' },
+        markdown = { 'markdownfmt' },
+        zig = { 'zigfmt' },
+        nu = { 'nufmt' },
+        ['*'] = { 'codespell' },
+        ['_'] = { 'trim_whitespace' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },

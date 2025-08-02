@@ -1,10 +1,11 @@
-export ANDROID_HOME=~/Library/Android/sdk
-export JAVA_HOME=/Users/bronstedk/.sdkman/candidates/java/current
+export ANDROID_HOME="~/Library/Android/sdk"
+export JAVA_HOME=`/usr/libexec/java_home`
 export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@15/lib/pkgconfig"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-# export LUA_CPATH="./?.so;/usr/local/lib/lua/5.3/?.so;/usr/local/share/lua/5.3/?.so;$HOME/.local/share/sketchybar_lua/?.so"
+
+PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -25,12 +26,10 @@ alias y='yazi'
 alias vi='nvim'
 alias vim='nvim'
 
+alias idea='open -a "/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea"'
+
 alias epip='.venv/bin/python -m pip'
 alias epython='.venv/bin/python'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -50,5 +49,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-nu
-# fastfetch
+fastfetch

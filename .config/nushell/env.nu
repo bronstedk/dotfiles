@@ -55,21 +55,15 @@ $env.HOMEBREW_REPOSITORY = "/opt/homebrew"
 $env.INFOPATH = "/opt/homebrew/share/info:/opt/homebrew/share/info"
 $env.HOMEBREW_CELLAR = "/opt/homebrew/Cellar"
 
-$env.GRADLE_HOME = "/Users/bronstedk/.sdkman/candidates/gradle/current"
-
-$env.SDKMAN_PLATFORM = "darwinarm64"
-$env.SDKMAN_CANDIDATES_API = "https://api.sdkman.io/2"
-$env.SDKMAN_DIR = "/Users/bronstedk/.sdkman"
-$env.SDKMAN_CANDIDATES_DIR = "/Users/bronstedk/.sdkman/candidates"
+$env.GRADLE_HOME = "/opt/homebrew/bin/gradle"
 
 $env.STARSHIP_CONFIG = $env.Home + "/.config/starship/starship.toml"
 $env.ANDROID_HOME = "/Library/Android/sdk"
-$env.JAVA_HOME = "/Users/bronstedk/.sdkman/candidates/java/current"
-$env.KOTLIN_HOME = "/Users/bronstedk/.sdkman/candidates/kotlin/current"
+$env.JAVA_HOME = $"(/usr/libexec/java_home)"
+$env.KOTLIN_HOME = "/opt/homebrew/bin/kotlin"
 $env.PKG_CONFIG_PATH = "/opt/homebrew/opt/postgresql@15/lib/pkgconfig"
 $env.LDFLAGS = "-L/opt/homebrew/opt/postgresql@15/lib"
 $env.CPPFLAGS = "-I/opt/homebrew/opt/postgresql@15/include"
-$env.SDKMAN_DIR = $env.HOME + "/.sdkman"
 
 $env.XDG_CONFIG_HOME = $env.HOME + "/.config"
 

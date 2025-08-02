@@ -221,9 +221,6 @@ alt-shift-l = [
     'exec-and-forget sketchybar --trigger change_mode MODE=main',
 ]
 
-[workspace-to-monitor-force-assignment]
-1 = ["KA242Y E", "secondary"]
-
 [[on-window-detected]]
 if.app-id = "com.apple.systempreferences"
 run = ['layout tiling']

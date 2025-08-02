@@ -17,6 +17,8 @@ alias y = yazi
 alias vi = nvim
 alias vim = nvim
 
+alias idea = ^open -a `/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea`
+
 alias epip = .venv/bin/python -m pip
 alias epython = .venv/bin/python
 
