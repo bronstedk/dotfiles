@@ -31,7 +31,6 @@ return {
       end,
       formatters = {
         bibtex_tidy = {},
-        ktlint = {},
       },
       formatters_by_ft = {
         lua = { 'stylua' },
@@ -41,10 +40,11 @@ return {
         tex = { 'tex-fmt' },
         bib = { 'bibtex-tidy' },
         java = { 'google-java-format' },
-        kotlin = { 'ktlint' },
+        kotlin = { 'ktlint', 'ktfmt' },
         markdown = { 'markdownfmt' },
+        nix = { 'nixfmt', 'nixpkgs_fmt' },
+        json = { 'fixjson' },
         zig = { 'zigfmt' },
-        nu = { 'nufmt' },
         ['*'] = { 'codespell' },
         ['_'] = { 'trim_whitespace' },
         --

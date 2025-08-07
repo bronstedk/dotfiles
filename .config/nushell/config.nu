@@ -3,9 +3,6 @@ source ~/.cache/carapace/init.nu
 source ~/.zoxide.nu
 source ~/.local/share/atuin/init.nu
 
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
 alias ls-builtin = ls
 alias eza = eza -lha -s name --icons=always
 
@@ -16,8 +13,6 @@ alias y = yazi
 
 alias vi = nvim
 alias vim = nvim
-
-alias idea = ^open -a `/Applications/IntelliJ IDEA CE.app/Contents/MacOS/idea`
 
 alias epip = .venv/bin/python -m pip
 alias epython = .venv/bin/python
@@ -61,7 +56,7 @@ def "custom genDocFiles" [ --num_files (-n): int, --last_date (-l): string = ""]
   if ($num_files == null or $num_files <= 0) {
     error make {msg: "Please provide a positive integer for --num_files."}
   }
-  cd /Users/bronstedk/Documents/shema
+  cd /Users/bronstedk/Documents/schema
 
   let dir = "./templates/"
   let target_dir = "./daily_notes/"
@@ -117,5 +112,3 @@ def "touch -c" [...files: string] {
     touch $file
   }
 }
-
-fastfetch

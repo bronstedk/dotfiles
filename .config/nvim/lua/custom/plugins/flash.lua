@@ -4,14 +4,13 @@ return {
     event = 'VeryLazy',
     ---@type Flash.Config
     opts = {},
-    config = function()
-      local flash = require 'flash'
-
-      vim.keymap.set({ 'n', 'x', 'o' }, 'gs', flash.jump, { desc = 'Flash', noremap = true })
-      vim.keymap.set({ 'n', 'x', 'o' }, 'gS', flash.treesitter, { desc = 'Flash Treesitter', noremap = true })
-      vim.keymap.set('o', 'r', flash.remote, { desc = 'Remote Flash', noremap = true })
-      vim.keymap.set({ 'o', 'x' }, 'R', flash.treesitter_search, { desc = 'Treesitter Search', noremap = true })
-      vim.keymap.set('c', '<c-s>', flash.toggle, { desc = 'Toggle Flash Search', noremap = true })
-    end,
+  -- stylua: ignore
+  keys = {
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      },
   },
 }

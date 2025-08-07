@@ -134,6 +134,7 @@ alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = "workspace 1"
 alt-2 = "workspace 2"
+alt-3 = "workspace 3"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = [
@@ -143,6 +144,10 @@ alt-shift-1 = [
 alt-shift-2 = [
     "move-node-to-workspace 2",
     "exec-and-forget sketchybar --trigger workspace_move PREV_WORKSPACE=2",
+]
+alt-shift-3 = [
+    "move-node-to-workspace 3",
+    "exec-and-forget sketchybar --trigger workspace_move PREV_WORKSPACE=3",
 ]
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -173,13 +178,13 @@ h = 'resize width -50'
 j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
-b = 'balance-sizes'
+b = [
+    'balance-sizes',
+    'mode main',
+    'exec-and-forget sketchybar --trigger change_mode MODE=main'
+]
 
 enter = [
-    'mode main',
-    'exec-and-forget sketchybar --trigger change_mode MODE=main',
-]
-esc = [
     'mode main',
     'exec-and-forget sketchybar --trigger change_mode MODE=main',
 ]
@@ -187,7 +192,7 @@ esc = [
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = [
+enter = [
     'mode main',
     'exec-and-forget sketchybar --trigger change_mode MODE=main',
 ]
@@ -220,6 +225,9 @@ alt-shift-l = [
     "mode main",
     'exec-and-forget sketchybar --trigger change_mode MODE=main',
 ]
+
+[workspace-to-monitor-force-assignment]
+1 = ['KA242Y E', 'secondary']
 
 [[on-window-detected]]
 if.app-id = "com.apple.systempreferences"

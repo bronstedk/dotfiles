@@ -2,8 +2,8 @@ return {
   {
     'lervag/vimtex',
     lazy = false,
-    init = function()
-      vim.g.vimtex_view_method = 'TexShop'
-    end,
+    -- init = function()
+    --   vim.g.vimtex_view_method = 'TexShop'
+    -- end,
   },
 }

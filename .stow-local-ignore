@@ -1,4 +1,5 @@
 # Comments and blank lines are allowed.
+.*\.DS_Store
 
 RCS
 .+,v
@@ -23,3 +24,4 @@ _darcs
 ^/COPYING
 
 \.jj
+\.idea
