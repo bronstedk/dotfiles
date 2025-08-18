@@ -68,14 +68,26 @@ foreground = 'p:pink'
 type = 'rprompt'
 overflow = 'hidden'
 
+
 [[blocks.segments]]
 type = 'executiontime'
 style = 'plain'
-foreground = 'p:lavender'
+foreground = 'p:pink'
 template = '{{ .FormattedMs }}'
 
 [blocks.segments.properties]
 style = 'roundrock'
+
+[[blocks.segments]]
+type = 'shell'
+style = 'plain'
+foreground = 'p:closer'
+
+[[blocks.segments]]
+type = 'root'
+style = 'plain'
+foreground = 'p:lavender'
+template = ''
 
 [[blocks]]
 type = 'prompt'
