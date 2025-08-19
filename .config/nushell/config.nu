@@ -9,8 +9,6 @@ alias eza = eza -lha -s name --icons=always
 alias cd = z
 alias cdi = zi
 
-alias y = yazi
-
 alias vi = nvim
 alias vim = nvim
 
@@ -41,6 +39,16 @@ def ls [
     --threads=$threads
     ...$pattern
   ) | sort-by type name -i
+}
+
+def --env y [...args] {
+	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+	yazi ...$args --cwd-file $tmp
+	let cwd = (open $tmp)
+	if $cwd != "" and $cwd != $env.PWD {
+		cd $cwd
+	}
+	rm -fp $tmp
 }
 
 # Generates a specified number of daily progress note files by copying a template
@@ -112,3 +120,5 @@ def "touch -c" [...files: string] {
     touch $file
   }
 }
+
+oh-my-posh init nu --config ~/dotfiles/.config/ohmyposh/catppuccin_mocha.toml

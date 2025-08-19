@@ -65,7 +65,7 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@15/lib/pkgconfig"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
-
+export XDG_CONFIG_HOME="$HOME/.config"
 PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Shell integrations
@@ -81,7 +81,7 @@ eval "$(thefuck --alias)"
 eval "$(thefuck --alias fk)"
 
 # Aliases
-alias ls='eza -lha -s name --icons=always'
+alias ll='eza -lha -s name --icons=always'
 alias c='clear'
 alias vi='nvim'
 alias vim='nvim'
@@ -122,4 +122,5 @@ function conda() {
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+nu
 # zprof

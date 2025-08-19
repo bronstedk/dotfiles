@@ -104,6 +104,7 @@ style = 'plain'
 template = ' '
 foreground = 'p:closer'
 background = 'transparent'
+newline = true
 
 [secondary_prompt]
 template = ' '
