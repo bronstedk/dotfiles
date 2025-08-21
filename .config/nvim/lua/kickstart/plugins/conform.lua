@@ -42,7 +42,7 @@ return {
         java = { 'google-java-format' },
         kotlin = { 'ktlint', 'ktfmt' },
         markdown = { 'markdownfmt' },
-        nix = { 'nixfmt', 'nixpkgs_fmt' },
+        nix = { 'alejandra', 'nixpkgs_fmt' },
         json = { 'fixjson' },
         zig = { 'zigfmt' },
         ['*'] = { 'codespell' },

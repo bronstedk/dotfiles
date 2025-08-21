@@ -1,0 +1,17 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+
+[user]
+name = "bronstedk"
+email = "djieumoraphael@gmail.com"
+
+[signing]
+behavior = "keep"
+backend = "gpg"
+backends.gpg.program = "gpg2"
+
+[git]
+sign-on-push = true

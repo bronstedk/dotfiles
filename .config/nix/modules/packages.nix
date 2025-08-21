@@ -1,0 +1,31 @@
+{pkgs, ...}: {
+  environment.systemPackages = [
+    pkgs.mkalias
+    pkgs.eza
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.neovim
+    pkgs.alejandra
+    pkgs.stow
+    pkgs.nushell
+    pkgs.fzf
+    pkgs.atuin
+    pkgs.zoxide
+    pkgs.zinit
+    pkgs.oh-my-posh
+    pkgs.carapace
+    pkgs.sketchybar
+    pkgs.jankyborders
+    pkgs.jujutsu
+    pkgs.bitwarden-desktop
+    pkgs.yazi
+    pkgs.git
+    pkgs.gopls
+    pkgs.pyright
+    pkgs.gnupg
+    pkgs.go
+    pkgs.wezterm
+    pkgs.raycast
+    pkgs.aerospace
+  ];
+}

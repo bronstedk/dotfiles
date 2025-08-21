@@ -77,8 +77,6 @@ fi
 eval "$(fzf --zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(thefuck --alias)"
-eval "$(thefuck --alias fk)"
 
 # Aliases
 alias ll='eza -lha -s name --icons=always'
@@ -122,5 +120,5 @@ function conda() {
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-nu
+# nu
 # zprof
