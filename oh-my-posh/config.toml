@@ -1,0 +1,94 @@
+final_space = true
+version = 3
+
+[[blocks]]
+alignment = "left"
+newline = true
+type = "prompt"
+
+[[blocks.segments]]
+foreground = "#ACB0BE"
+style = "plain"
+template = "{{.Icon}} "
+type = "#ACB0BE"
+
+[[blocks.segments]]
+type = "os"
+style = "plain"
+foreground = "#ACB0BE"
+template = "{{ if .WSL }}WSL at {{ end }}{{.Icon}}"
+
+[[blocks.segments]]
+foreground = "#ACB0BE"
+style = "plain"
+type = "shell"
+
+[[blocks.segments]]
+foreground = "#89B4FA"
+style = "plain"
+template = "{{ .UserName }} "
+type = "session"
+
+[[blocks.segments]]
+foreground = "#F5C2E7"
+style = "plain"
+template = "{{ .Path }} "
+type = "path"
+
+[blocks.segments.properties]
+home_icon = "~"
+style = "full"
+
+[[blocks.segments]]
+foreground = "#B4BEFE"
+style = "plain"
+template = "{{ .HEAD }} "
+type = "git"
+
+[blocks.segments.properties]
+branch_icon = " "
+cherry_pick_icon = " "
+commit_icon = " "
+fetch_status = false
+fetch_upstream_icon = false
+merge_icon = " "
+no_commits_icon = " "
+rebase_icon = " "
+revert_icon = " "
+tag_icon = " "
+
+[[blocks]]
+alignment = "left"
+newline = true
+type = "prompt"
+
+[[blocks.segments]]
+foreground = "#F5C2E7"
+style = "plain"
+template = "{{ .FormattedMs }}"
+type = "executiontime"
+
+[blocks.segments.properties]
+style = "roundrock"
+
+[[blocks.segments]]
+type = "status"
+style = "plain"
+foreground = "#F5C2E7"
+background_templates = [ "{{ if .Error }}#e91e63{{ end }}" ]
+
+[[blocks.segments]]
+foreground = "#ACB0BE"
+style = "plain"
+template = " "
+type = "text"
+
+[secondary_prompt]
+foreground = "#ACB0BE"
+template = " "
+
+[upgrade]
+auto = false
+interval = "168h"
+notice = false
+source = "cdn"
